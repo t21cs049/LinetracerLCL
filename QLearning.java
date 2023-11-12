@@ -99,7 +99,6 @@ public class QLearning {
 	}
 	
 	public void showQTable() {
-		System.out.println("/////////////////////////");
 		for (int i = 0; i < qTable.length; i++) {
 			System.out.print("S " + i + " : ");
 			for (int j = 0; j < qTable[i].length; j++) {

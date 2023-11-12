@@ -116,6 +116,11 @@ public abstract class Robot
     return ongoal;
   }
   
+  public boolean isOnGoalForLearning()
+  {
+    return getColor(LIGHT_A) == GREEN || getColor(LIGHT_B) == GREEN || getColor(LIGHT_C) == GREEN;
+  }
+  
   /** 光センサＡを表す定数 */
   public final static int LIGHT_A = 0;
   /** 光センサＢを表す定数 */
