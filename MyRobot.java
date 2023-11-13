@@ -13,7 +13,7 @@ public class MyRobot extends Robot {
 			// step 1: Q学習する
 			QLearning q1 = new QLearning(statesNumber, actionNumber, 0.5, 0.5);
 
-			int trials = 1000; // 強化学習の試行回数
+			int trials = 3000; // 強化学習の試行回数
 			int steps = 1000; // １試行あたりの最大ステップ数
 			for (int t = 1; t <= trials; t++) { // 試行回数だけ繰り返し
 				/* ロボットを初期位置に戻す */
@@ -85,13 +85,13 @@ public class MyRobot extends Robot {
 			return 10000;
 		// 現在の座標がゴール上であれば、ゴールへは最優先で向かってほしいため、非常に大きい正の値を与える
 		if (getColor(LIGHT_A) == WHITE && getColor(LIGHT_B) == WHITE && getColor(LIGHT_C) == WHITE)
-			return -100;
+			return -1000;
 
 		// ゴールと現在位置のユークリッド距離から、ゴールに近ければ報酬は大きく、遠くなれば報酬は小さくなるような関数を設定
 		// 分子の３００は報酬の大きさを調整
 		// 分母の「＋１」は分母が０になることを防ぐため
 		int reward = (judgeColorForState(LIGHT_B)+1) * 20 / (judgeColor(LIGHT_A) + 1) / (judgeColor(LIGHT_C) + 1);
-		return reward * reward;
+		return reward*reward;
 	}
 
 	// 選択された行動に応じたロボットの座標更新を行う
