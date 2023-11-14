@@ -13,8 +13,8 @@ public class MyRobot extends Robot {
 			// step 1: Q学習する
 			QLearning q1 = new QLearning(statesNumber, actionNumber, 0.5, 0.5);
 
-			int trials = 3000; // 強化学習の試行回数
-			int steps = 1000; // １試行あたりの最大ステップ数
+			int trials = 10000; // 強化学習の試行回数
+			int steps = 1200; // １試行あたりの最大ステップ数
 			for (int t = 1; t <= trials; t++) { // 試行回数だけ繰り返し
 				/* ロボットを初期位置に戻す */
 				init();
