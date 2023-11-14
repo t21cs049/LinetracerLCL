@@ -88,19 +88,10 @@ public class QLearning {
 				+ (alpha * (reward + gamma * qTable[after][selectAction(after)] - qTable[before][action]));
 //デバック用コード　ｑＴｂａｌｅの内容をここで表示する。
 //デバック時以外は処理速度を遅くしてしまうので、非表示にする。
-//		System.out.println("/////////////////////////");
-//		for (int i = 0; i < qTable.length; i++) {
-//			System.out.print("S " + i + " : ");
-//			for (int j = 0; j < qTable[i].length; j++) {
-//				System.out.print(qTable[i][j] + " ");
-//			}
-//			System.out.println();
-//		}
 	}
 	
 	public void showQTable() {
 		for (int i = 0; i < qTable.length; i++) {
-			System.out.print("S " + i + " : ");
 			for (int j = 0; j < qTable[i].length; j++) {
 				System.out.print(qTable[i][j] + " ");
 			}
